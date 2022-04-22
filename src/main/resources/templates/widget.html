@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html  >
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div style=" display: flex;"> <h1 style="margin: 0 auto 0 auto; color:blue;" >Remember change the link to get webhook </h1> </div>
+
+</body>
+<script src="https://js.fintoc.com/v1/"></script>
+<script>
+  window.onload = () => {
+    const widget = Fintoc.create({
+      publicKey: 'pk_test_-mr-5ENyb9ubzKnoeU8xixkuazvH3yvp',
+      holderType: 'business',
+      product: 'movements',
+      webhookUrl: 'https://555e-2803-c180-2002-97a2-34d2-1846-f203-fd8a.ngrok.io/webhook/link',
+      
+      onSuccess: (link) => {
+        console.log('Success!');
+        console.log(link);
+      },
+      onExit: () => {
+        console.log('Widget closing!');
+      },
+      onEvent: (event) => {
+        console.log('An event just happened!');
+        console.log(event);
+      },
+    });
+    widget.open();
+  };
+ 
+</script>
+
+</html>
